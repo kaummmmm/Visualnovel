@@ -27,12 +27,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
     console.log("ready");
 
-    
+    // === FX NODES ===
+    const reverb = audioCtx.createConvolver();
+    const delay = audioCtx.createDelay();
+
+    // === MIX NODES (wet / dry control) ===
+    const wetGain = audioCtx.createGain();
+    const dryGain = audioCtx.createGain();
+
+    // === TWEAK VALUES ===
+
+    // REVERB
+    const REVERB_TIME = 2.5;     // seconds → room size
+    const REVERB_DECAY = 2.2;    // higher = longer tail
+
+    // DELAY
+    delay.delayTime.value = 0.25; // seconds (0.2–0.4 nice)
+
+    // MIX
+    wetGain.gain.value = 0.5;   // FX amount (0 = dry, 1 = full wet)
+    dryGain.gain.value = 1.0;   // original signal level
+
+    // === REVERB IMPULSE ===
+    const length = audioCtx.sampleRate * REVERB_TIME;
+    const impulse = audioCtx.createBuffer(2, length, audioCtx.sampleRate);
+
+    for (let c = 0; c < 2; c++) {
+        const data = impulse.getChannelData(c);
+        for (let i = 0; i < length; i++) {
+            data[i] =
+                (Math.random() * 2 - 1) *
+                Math.pow(1 - i / length, REVERB_DECAY);
+        }
+    }
+
+    reverb.buffer = impulse;
+
+    // === ROUTING ===
+    //
+    // masterGain → dryGain → destination
+    // masterGain → reverb → delay → wetGain → destination
+    //
+
+    masterGain.disconnect(); // important: reset routing
+
+    masterGain.connect(dryGain);
+    dryGain.connect(audioCtx.destination);
+
+    masterGain.connect(reverb);
+    reverb.connect(delay);
+    delay.connect(wetGain);
+    wetGain.connect(audioCtx.destination);
+
+
 
     const $audioTick = new Audio("src/tick.mp3");
     $audioTick.preload = "auto";
+    routeToMaster($audioTick);
     const $audioClic = new Audio("src/clic.mp3");
     $audioClic.preload = "auto";
+    routeToMaster($audioClic);
     const $audioDoor = new Audio("src/door.mp3");
     $audioDoor.preload = "auto";
     let playedDoor = false;
@@ -337,6 +391,14 @@ document.addEventListener("DOMContentLoaded", function () {
         const currentSlide = document.querySelector('.slide.current');
         if (!currentSlide) return;
 
+        // verb
+        if (currentSlide.classList.contains('1')) {
+            wetGain.gain.value = 1;
+        }
+        if (currentSlide.classList.contains('2')) {
+            wetGain.gain.value = 0;
+        }
+        
         // noise
         if (currentSlide.classList.contains('1')) {
             if ($audioNoise.paused && !playedNoise) {
