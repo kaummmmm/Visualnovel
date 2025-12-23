@@ -85,81 +85,122 @@ document.addEventListener("DOMContentLoaded", function () {
     const $audioTick = new Audio("src/tick.mp3");
     $audioTick.preload = "auto";
     routeToMaster($audioTick);
+
     const $audioClic = new Audio("src/clic.mp3");
     $audioClic.preload = "auto";
     routeToMaster($audioClic);
+
     const $audioDoor = new Audio("src/door.mp3");
     $audioDoor.preload = "auto";
+    routeToMaster($audioDoor);
     let playedDoor = false;
+
     const $audioAmbient = new Audio("src/ambient.mp3");
     $audioAmbient.preload = "auto";
+    routeToMaster($audioAmbient);
     let playedAmbient = false;
+
     const $audioBell = new Audio("src/bell.mp3");
     $audioBell.preload = "auto";
+    routeToMaster($audioBell);
     let playedBell = false;
+
     const $audioChords = new Audio("src/chords.mp3");
     $audioChords.preload = "auto";
+    routeToMaster($audioChords);
     let playedChords = false;
+
     const $audioSwitch = new Audio("src/switch.mp3");
     $audioSwitch.preload = "auto";
+    routeToMaster($audioSwitch);
     let playedSwitch = false;
+
     const $audioSnore = new Audio("src/snore.mp3");
-    $audioSnore.loop = true
+    $audioSnore.loop = true;
     $audioSnore.preload = "auto";
+    routeToMaster($audioSnore);
     let playedSnore = false;
+
     const $audioNoise = new Audio("src/noise.mp3");
     $audioNoise.preload = "auto";
+    routeToMaster($audioNoise);
     let playedNoise = false;
+
+    const $audioRiser = new Audio("src/riser.mp3");
+    $audioRiser.preload = "auto";
+    routeToMaster($audioRiser);
+    let playedRiser = false;
+
     const $audioPas1 = new Audio("src/pas1.mp3");
     $audioPas1.preload = "auto";
+    routeToMaster($audioPas1);
     let playedPas1 = false;
 
     const $audioPas3 = new Audio("src/pas3.mp3");
     $audioPas3.preload = "auto";
+    routeToMaster($audioPas3);
     let playedPas3 = false;
 
     const $audioPas5 = new Audio("src/pas5.mp3");
     $audioPas5.preload = "auto";
+    routeToMaster($audioPas5);
     let playedPas5 = false;
 
     const $audioPas7 = new Audio("src/pas7.mp3");
     $audioPas7.preload = "auto";
+    routeToMaster($audioPas7);
     let playedPas7 = false;
 
     const $audioPas9 = new Audio("src/pas9.mp3");
     $audioPas9.preload = "auto";
+    routeToMaster($audioPas9);
     let playedPas9 = false;
 
     const $audioPas11 = new Audio("src/pas11.mp3");
     $audioPas11.preload = "auto";
+    routeToMaster($audioPas11);
     let playedPas11 = false;
 
     const $audioPas13 = new Audio("src/pas13.mp3");
     $audioPas13.preload = "auto";
+    routeToMaster($audioPas13);
     let playedPas13 = false;
 
     const $audioPas15 = new Audio("src/pas15.mp3");
     $audioPas15.preload = "auto";
+    routeToMaster($audioPas15);
     let playedPas15 = false;
 
     const $audioG3 = new Audio("src/G3.mp3");
     $audioG3.preload = "auto";
+    routeToMaster($audioG3);
     let playedG3 = false;
+
     const $audioD4 = new Audio("src/D4.mp3");
     $audioD4.preload = "auto";
+    routeToMaster($audioD4);
     let playedD4 = false;
+
     const $audioA4 = new Audio("src/A4.mp3");
     $audioA4.preload = "auto";
+    routeToMaster($audioA4);
     let playedA4 = false;
+
     const $audioBb4 = new Audio("src/Bb4.mp3");
     $audioBb4.preload = "auto";
+    routeToMaster($audioBb4);
     let playedBb4 = false;
+
     const $audioD5 = new Audio("src/D5.mp3");
     $audioD5.preload = "auto";
+    routeToMaster($audioD5);
     let playedD5 = false;
+
     const $audioF5 = new Audio("src/F5.mp3");
     $audioF5.preload = "auto";
+    routeToMaster($audioF5);
     let playedF5 = false;
+
 
 
 
@@ -510,6 +551,19 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!$audioChords.paused) {
                 $audioChords.pause();
                 $audioChords.currentTime = 0;
+            }
+        }
+        // riser
+        if (currentSlide.classList.contains('9')) {
+            if ($audioRiser.paused && !playedRiser) {
+                $audioRiser.play();
+                playedRiser = true;
+            }
+        }
+        if (currentSlide.classList.contains('10')) {
+            if (!$audioRiser.paused) {
+                $audioRiser.pause();
+                $audioRiser.currentTime = 0;
             }
         }
         // switch
