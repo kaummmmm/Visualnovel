@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function routeToMaster(audioEl) {
         const source = audioCtx.createMediaElementSource(audioEl);
         source.connect(masterGain);
+        console.log(source)
     }
     
 
@@ -45,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     delay.delayTime.value = 0.25; // seconds (0.2–0.4 nice)
 
     // MIX
-    wetGain.gain.value = 0.5;   // FX amount (0 = dry, 1 = full wet)
+    wetGain.gain.value = 0;   // FX amount (0 = dry, 1 = full wet)
     dryGain.gain.value = 1.0;   // original signal level
 
     // === REVERB IMPULSE ===
@@ -300,6 +301,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.log("PLAY → $audioG3 (G3)");
                     $audioG3.play();
                     playedG3 = true;
+                    wetGain.gain.value = 1.3;
+
                 }
             }
             if (currentLi.classList.contains('8')) {
@@ -307,6 +310,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.log("STOP → $audioG3 (G3)");
                     $audioG3.pause();
                     $audioG3.currentTime = 0;
+                    
                 }
             }
             // D4
@@ -315,6 +319,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.log("PLAY → $audioD4 (D4)");
                     $audioD4.play();
                     playedD4 = true;
+                    wetGain.gain.value = 1.6;
                 }
             }
             if (currentLi.classList.contains('8')) {
@@ -330,6 +335,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.log("PLAY → $audioA4 (A4)");
                     $audioA4.play();
                     playedA4 = true;
+                    wetGain.gain.value = 2;
                 }
             }
             if (currentLi.classList.contains('8')) {
@@ -345,6 +351,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.log("PLAY → $audioBb4 (Bb4)");
                     $audioBb4.play();
                     playedBb4 = true;
+                    wetGain.gain.value = 2.3;
                 }
             }
             if (currentLi.classList.contains('8')) {
@@ -360,6 +367,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.log("PLAY → $audioD5 (D5)");
                     $audioD5.play();
                     playedD5 = true;
+                    wetGain.gain.value = 2.6;
                 }
             }
             if (currentLi.classList.contains('8')) {
@@ -375,6 +383,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.log("PLAY → $audioF5 (F5)");
                     $audioF5.play();
                     playedF5 = true;
+                    wetGain.gain.value = 3;
                 }
             }
             if (currentLi.classList.contains('8')) {
@@ -392,11 +401,65 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!currentSlide) return;
 
         // verb
-        if (currentSlide.classList.contains('1')) {
-            wetGain.gain.value = 1;
+        if (currentSlide.classList.contains('5')) {
+            // REVERB
+            REVERB_TIME = 4;     // seconds → room size
+            REVERB_DECAY = 0.5;    // higher = longer tail
+
+            // DELAY
+            delay.delayTime.value = 1; // seconds (0.2–0.4 nice)
+
+            // MIX
+            wetGain.gain.value = 1;   // FX amount (0 = dry, 1 = full wet)
+            dryGain.gain.value = 1.0;   // original signal level
         }
-        if (currentSlide.classList.contains('2')) {
-            wetGain.gain.value = 0;
+        if (currentSlide.classList.contains('6') || currentSlide.classList.contains('7') || currentSlide.classList.contains('8')) {
+            // REVERB
+            REVERB_TIME = 2.2;     // seconds → room size
+            REVERB_DECAY = 2.2;    // higher = longer tail
+
+            // DELAY
+            delay.delayTime.value = 0.7; // seconds (0.2–0.4 nice)
+
+            // MIX
+            wetGain.gain.value = 1;   // FX amount (0 = dry, 1 = full wet)
+            dryGain.gain.value = 1.0;   // original signal level
+        }
+        if (currentSlide.classList.contains('9')) {
+            // REVERB
+            REVERB_TIME = 4;     // seconds → room size
+            REVERB_DECAY = 4;    // higher = longer tail
+
+            // DELAY
+            delay.delayTime.value = 1.5; // seconds (0.2–0.4 nice)
+
+            // MIX
+            wetGain.gain.value = 1;   // FX amount (0 = dry, 1 = full wet)
+            dryGain.gain.value = 1.0;   // original signal level
+        }
+        if (currentSlide.classList.contains('10')) {
+            // REVERB
+            REVERB_TIME = 4;     // seconds → room size
+            REVERB_DECAY = 4;    // higher = longer tail
+
+            // DELAY
+            delay.delayTime.value = 1.5; // seconds (0.2–0.4 nice)
+
+            // MIX
+            wetGain.gain.value = 2;   // FX amount (0 = dry, 1 = full wet)
+            dryGain.gain.value = 1.0;   // original signal level
+        }
+        if (currentSlide.classList.contains('11')) {
+            // REVERB
+            REVERB_TIME = 4;     // seconds → room size
+            REVERB_DECAY = 4;    // higher = longer tail
+
+            // DELAY
+            delay.delayTime.value = 1.5; // seconds (0.2–0.4 nice)
+
+            // MIX
+            wetGain.gain.value = 0;   // FX amount (0 = dry, 1 = full wet)
+            dryGain.gain.value = 1.0;   // original signal level
         }
         
         // noise
