@@ -405,7 +405,6 @@ document.addEventListener("DOMContentLoaded", function () {
             // REVERB     
 
             // DELAY
-            delay.delayTime.value = 1; // seconds (0.2–0.4 nice)
 
             // MIX
             wetGain.gain.value = 1;   // FX amount (0 = dry, 1 = full wet)
@@ -415,7 +414,6 @@ document.addEventListener("DOMContentLoaded", function () {
             // REVERB
 
             // DELAY
-            delay.delayTime.value = 0.7; // seconds (0.2–0.4 nice)
 
             // MIX
             wetGain.gain.value = 1;   // FX amount (0 = dry, 1 = full wet)
@@ -425,7 +423,6 @@ document.addEventListener("DOMContentLoaded", function () {
             // REVERB
 
             // DELAY
-            delay.delayTime.value = 1.5; // seconds (0.2–0.4 nice)
 
             // MIX
             wetGain.gain.value = 1;   // FX amount (0 = dry, 1 = full wet)
@@ -435,7 +432,6 @@ document.addEventListener("DOMContentLoaded", function () {
             // REVERB
 
             // DELAY
-            delay.delayTime.value = 1.5; // seconds (0.2–0.4 nice)
 
             // MIX
             wetGain.gain.value = 2;   // FX amount (0 = dry, 1 = full wet)
@@ -445,7 +441,6 @@ document.addEventListener("DOMContentLoaded", function () {
             // REVERB
 
             // DELAY
-            delay.delayTime.value = 1.5; // seconds (0.2–0.4 nice)
 
             // MIX
             wetGain.gain.value = 0;   // FX amount (0 = dry, 1 = full wet)
