@@ -403,7 +403,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // verb
         if (currentSlide.classList.contains('5')) {
             // REVERB     
-            REVERB_DECAY = 0.5;    // higher = longer tail
 
             // DELAY
             delay.delayTime.value = 1; // seconds (0.2–0.4 nice)
@@ -414,7 +413,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if (currentSlide.classList.contains('6') || currentSlide.classList.contains('7') || currentSlide.classList.contains('8')) {
             // REVERB
-            REVERB_DECAY = 2.2;    // higher = longer tail
 
             // DELAY
             delay.delayTime.value = 0.7; // seconds (0.2–0.4 nice)
@@ -425,7 +423,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if (currentSlide.classList.contains('9')) {
             // REVERB
-            REVERB_DECAY = 4;    // higher = longer tail
 
             // DELAY
             delay.delayTime.value = 1.5; // seconds (0.2–0.4 nice)
@@ -436,7 +433,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if (currentSlide.classList.contains('10')) {
             // REVERB
-            REVERB_DECAY = 4;    // higher = longer tail
 
             // DELAY
             delay.delayTime.value = 1.5; // seconds (0.2–0.4 nice)
@@ -447,7 +443,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if (currentSlide.classList.contains('11')) {
             // REVERB
-            REVERB_DECAY = 4;    // higher = longer tail
 
             // DELAY
             delay.delayTime.value = 1.5; // seconds (0.2–0.4 nice)
