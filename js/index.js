@@ -214,14 +214,14 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!currentLi) return;
         if (currentSlide.classList.contains('12')) {
             // pas1
-            if (currentLi.classList.contains('1')) {
+            if (currentLi.classList.contains('2')) {
                 if ($audioPas1.paused && !playedPas1) {
                     console.log("PLAY → $audioPas1 (pas1)");
                     $audioPas1.play();
                     playedPas1 = true;
                 }
             }
-            if (currentLi.classList.contains('2')) {
+            if (currentLi.classList.contains('4')) {
                 if (playedPas1) {
                     console.log("STOP → $audioPas1 (pas1)");
                     $audioPas1.pause();
@@ -230,14 +230,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // pas3
-            if (currentLi.classList.contains('3')) {
+            if (currentLi.classList.contains('4')) {
                 if ($audioPas3.paused && !playedPas3) {
                     console.log("PLAY → $audioPas3 (pas3)");
                     $audioPas3.play();
                     playedPas3 = true;
                 }
             }
-            if (currentLi.classList.contains('4')) {
+            if (currentLi.classList.contains('6')) {
                 if (playedPas3) {
                     console.log("STOP → $audioPas3 (pas3)");
                     $audioPas3.pause();
@@ -246,14 +246,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // pas5
-            if (currentLi.classList.contains('5')) {
+            if (currentLi.classList.contains('6')) {
                 if ($audioPas5.paused && !playedPas5) {
                     console.log("PLAY → $audioPas5 (pas5)");
                     $audioPas5.play();
                     playedPas5 = true;
                 }
             }
-            if (currentLi.classList.contains('6')) {
+            if (currentLi.classList.contains('8')) {
                 if (playedPas5) {
                     console.log("STOP → $audioPas5 (pas5)");
                     $audioPas5.pause();
@@ -262,14 +262,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // pas7
-            if (currentLi.classList.contains('7')) {
+            if (currentLi.classList.contains('8')) {
                 if ($audioPas7.paused && !playedPas7) {
                     console.log("PLAY → $audioPas7 (pas7)");
                     $audioPas7.play();
                     playedPas7 = true;
                 }
             }
-            if (currentLi.classList.contains('8')) {
+            if (currentLi.classList.contains('10')) {
                 if (playedPas7) {
                     console.log("STOP → $audioPas7 (pas7)");
                     $audioPas7.pause();
@@ -278,14 +278,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // pas9
-            if (currentLi.classList.contains('9')) {
+            if (currentLi.classList.contains('10')) {
                 if ($audioPas9.paused && !playedPas9) {
                     console.log("PLAY → $audioPas9 (pas9)");
                     $audioPas9.play();
                     playedPas9 = true;
                 }
             }
-            if (currentLi.classList.contains('10')) {
+            if (currentLi.classList.contains('12')) {
                 if (playedPas9) {
                     console.log("STOP → $audioPas9 (pas9)");
                     $audioPas9.pause();
@@ -294,14 +294,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // pas11
-            if (currentLi.classList.contains('11')) {
+            if (currentLi.classList.contains('12')) {
                 if ($audioPas11.paused && !playedPas11) {
                     console.log("PLAY → $audioPas11 (pas11)");
                     $audioPas11.play();
                     playedPas11 = true;
                 }
             }
-            if (currentLi.classList.contains('12')) {
+            if (currentLi.classList.contains('14')) {
                 if (playedPas11) {
                     console.log("STOP → $audioPas11 (pas11)");
                     $audioPas11.pause();
@@ -310,14 +310,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // pas13
-            if (currentLi.classList.contains('13')) {
+            if (currentLi.classList.contains('14')) {
                 if ($audioPas13.paused && !playedPas13) {
                     console.log("PLAY → $audioPas13 (pas13)");
                     $audioPas13.play();
                     playedPas13 = true;
                 }
             }
-            if (currentLi.classList.contains('14')) {
+            if (currentLi.classList.contains('15')) {
                 if (playedPas13) {
                     console.log("STOP → $audioPas13 (pas13)");
                     $audioPas13.pause();
