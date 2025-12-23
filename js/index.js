@@ -402,8 +402,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // verb
         if (currentSlide.classList.contains('5')) {
-            // REVERB
-            REVERB_TIME = 4;     // seconds → room size
+            // REVERB     
             REVERB_DECAY = 0.5;    // higher = longer tail
 
             // DELAY
@@ -415,7 +414,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if (currentSlide.classList.contains('6') || currentSlide.classList.contains('7') || currentSlide.classList.contains('8')) {
             // REVERB
-            REVERB_TIME = 2.2;     // seconds → room size
             REVERB_DECAY = 2.2;    // higher = longer tail
 
             // DELAY
@@ -427,7 +425,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if (currentSlide.classList.contains('9')) {
             // REVERB
-            REVERB_TIME = 4;     // seconds → room size
             REVERB_DECAY = 4;    // higher = longer tail
 
             // DELAY
@@ -439,7 +436,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if (currentSlide.classList.contains('10')) {
             // REVERB
-            REVERB_TIME = 4;     // seconds → room size
             REVERB_DECAY = 4;    // higher = longer tail
 
             // DELAY
@@ -451,7 +447,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if (currentSlide.classList.contains('11')) {
             // REVERB
-            REVERB_TIME = 4;     // seconds → room size
             REVERB_DECAY = 4;    // higher = longer tail
 
             // DELAY
