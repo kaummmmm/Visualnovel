@@ -203,8 +203,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+    let audioPlaying = false
 
+    function audioCheck() {
+        if(!$audioTick.paused ||
+            !$audioClic.paused ||
+            !$audioDoor.paused ||
+            !$audioAmbient.paused ||
+            !$audioBell.paused ||
+            !$audioChords.paused ||
+            !$audioSwitch.paused ||
+            !$audioSnore.paused ||
+            !$audioNoise.paused ||
+            !$audioRiser.paused ||
 
+            !$audioPas1.paused ||
+            !$audioPas3.paused ||
+            !$audioPas5.paused ||
+            !$audioPas7.paused ||
+            !$audioPas9.paused ||
+            !$audioPas11.paused ||
+            !$audioPas13.paused ||
+            !$audioPas15.paused ||
+
+            !$audioG3.paused ||
+            !$audioD4.paused ||
+            !$audioA4.paused ||
+            !$audioBb4.paused ||
+            !$audioD5.paused ||
+            !$audioF5.paused) {
+            audioPlaying = true
+        } else {
+            audioPlaying = false
+        }
+    }
 
 
 
@@ -434,6 +466,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     $audioF5.currentTime = 0;
                 }
             }
+            if (currentLi.classList.contains('8')) {  
+                wetGain.gain.value = 0;  
+            }
 
         }
     }
@@ -660,7 +695,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log($button); // juste pour vérifier
     $button.addEventListener('click', function () {
         console.log('click button');
-
+        
         $audioClic.pause();
         $audioClic.currentTime = 0;
         $audioClic.play();
@@ -671,6 +706,12 @@ document.addEventListener("DOMContentLoaded", function () {
         let max = Number(currentSlide.dataset.maxtxt);
         console.log("cur =", cur, " / max =", max);
         
+        if(currentSlide.classList.contains('auto')) {
+            $button.classList.add("hidden")
+            autoClic();
+        } else {
+            $button.classList.remove("hidden")
+        }
 
         const items = currentSlide.querySelectorAll("li");
 
@@ -828,6 +869,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const VIRTUAL_BTN_IDS = ["btn-anim2", "btn-anim4", "btn-anim6"]; // ton bouton virtuel déjà existant
 
     let typewriterSpeed = 50
+    
+    
+    function autoClic() {
+        audioCheck();
+        console.log(audioPlaying);
+        if(!audioPlaying) {
+            if(!typewriterActive) {
+                $button.click();
+            };
+        } else {
+            setTimeout(autoClic, 50);
+        }
+    }
 
     function startTypewriter(liElement, fullText) {
         if (typewriterActive) return; // avoid double start
