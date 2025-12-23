@@ -123,7 +123,7 @@ ul {
 
 @font-face {
     font-family: "jgs9";
-    src: url("/Users/jessie23ansprochedevous./Desktop/BOOK 2025/Visualnovel/src/jgs9.ttf") format("truetype");
+    src: url("src/jgs9.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
