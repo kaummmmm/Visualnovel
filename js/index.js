@@ -221,7 +221,6 @@ document.addEventListener("DOMContentLoaded", function () {
             !$audioSnore.paused ||
             !$audioNoise.paused ||
             !$audioRiser.paused ||
-            !$audioBip.paused ||
 
             !$audioPas1.paused ||
             !$audioPas3.paused ||
