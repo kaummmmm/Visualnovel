@@ -706,12 +706,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let max = Number(currentSlide.dataset.maxtxt);
         console.log("cur =", cur, " / max =", max);
         
-        if(currentSlide.classList.contains('auto')) {
-            $button.classList.add("hidden")
-            autoClic();
-        } else {
-            $button.classList.remove("hidden")
-        }
+        
 
         const items = currentSlide.querySelectorAll("li");
 
@@ -733,6 +728,15 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             
             handleLiAudio();
+
+            if(currentLi.parentElement.parentElement.classList.contains('auto')) {
+                console.log(currentLi.parentElement, currentLi.parentElement.parentElement);
+                $button.classList.add("hidden");
+                autoClic();
+            } else {
+                $button.classList.remove("hidden");
+                console.log("back to manual click")
+            }
             
             console.log(currentLi)
             currentSlide.dataset.curtxt = cur + 1;
@@ -760,6 +764,14 @@ document.addEventListener("DOMContentLoaded", function () {
         $currentSlide.classList.remove('current');
         $nextSlide.classList.add('current');
         handleSlideAudio();
+        if(currentSlide.classList.contains('auto')) {
+            console.log(currentSlide)
+            $button.classList.add("hidden")
+            autoClic();
+        } else {
+            $button.classList.remove("hidden")
+            console.log("back to manual click")
+        }
         if ($nextSlide.classList.contains('end')) {
             $button.classList.add('hidden');
         }
