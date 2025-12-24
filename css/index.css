@@ -162,28 +162,7 @@ ul {
           /* 🔧 tweak scale amount here */ 
           opacity : 0.4; } 
 }
-.halo {
-  position: relative;
-}
 
-.halo::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: inherit;
-  animation: pulse 100ms ease-out infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(3);
-    opacity: 0;
-  }
-}
 
 
 
