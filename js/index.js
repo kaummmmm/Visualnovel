@@ -711,14 +711,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const items = currentSlide.querySelectorAll("li");
 
         if ((cur < max) && typewriterActive) {
- 
-            const li = items[cur];
-            const text = li.textContent;
             
-            li.textContent = text
-
-            
-            console.log("skipped typewriter")
+            console.log("returned because tw is active while clic")
             return;
         }
 
@@ -925,6 +919,17 @@ document.addEventListener("DOMContentLoaded", function () {
         let index = 0;
         liElement.textContent = "";
 
+        const skipHandler = () => {
+            if(typewriterActive) {
+                liElement.textContent = fullText;
+                $button.removeEventListener('click', skipHandler);
+                stopTypewriter();
+                console.log("typewriter skipped");
+                return;
+            };
+        };
+        $button.addEventListener('click', skipHandler);
+        
         // --- 1) Interval des lettres (100ms)
         twInterval = setInterval(() => {
             liElement.textContent += fullText[index];
