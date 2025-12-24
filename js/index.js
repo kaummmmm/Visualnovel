@@ -589,7 +589,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
         // riser
-        if (currentSlide.classList.contains('9')) {
+        if (currentSlide.classList.contains('rizer')) {
             if ($audioRiser.paused && !playedRiser) {
                 $audioRiser.play();
                 playedRiser = true;
@@ -769,7 +769,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         $currentSlide.classList.remove('current');
         $nextSlide.classList.add('current');
-        handleSlideAudio();
+        
         if(currentSlide.classList.contains('auto')) {
             console.log(currentSlide)
             $button.classList.add("hidden")
@@ -778,6 +778,7 @@ document.addEventListener("DOMContentLoaded", function () {
             $button.classList.remove("hidden")
             console.log("back to manual click")
         }
+        handleSlideAudio();
         if ($nextSlide.classList.contains('end')) {
             $button.classList.add('hidden');
         }
@@ -895,7 +896,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if(!audioPlaying) {
             if(!typewriterActive) {
                 $button.click();
-            };
+            } else {setTimeout(autoClic, 50)};
         } else {
             setTimeout(autoClic, 50);
         }
