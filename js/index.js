@@ -755,7 +755,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log($currentSlide);
         const $nextSlide = $currentSlide.previousElementSibling;
         console.log($nextSlide);
-
+        
         
         if ($currentSlide.classList.contains('fade')) {
             $currentSlide.classList.add('viewedfade');
@@ -769,9 +769,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         $currentSlide.classList.remove('current');
         $nextSlide.classList.add('current');
-        
-        if(currentSlide.classList.contains('auto')) {
-            console.log(currentSlide)
+        const $$currentSlide = document.querySelector('.slide.current');
+        if($$currentSlide.classList.contains('auto')) {
+            console.log($$currentSlide)
             $button.classList.add("hidden")
             autoClic();
         } else {
@@ -895,7 +895,9 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(audioPlaying);
         if(!audioPlaying) {
             if(!typewriterActive) {
-                $button.click();
+                setTimeout(() => {
+                    $button.click();
+                }, 500);   
             } else {setTimeout(autoClic, 50)};
         } else {
             setTimeout(autoClic, 50);
