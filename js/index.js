@@ -131,6 +131,11 @@ document.addEventListener("DOMContentLoaded", function () {
     routeToMaster($audioRiser);
     let playedRiser = false;
 
+    const $audioBip = new Audio("src/bip.mp3");
+    $audioBip.preload = "auto";
+    routeToMaster($audioBip);
+    let playedBip = false;
+
     const $audioPas1 = new Audio("src/pas1.mp3");
     $audioPas1.preload = "auto";
     routeToMaster($audioPas1);
@@ -216,6 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
             !$audioSnore.paused ||
             !$audioNoise.paused ||
             !$audioRiser.paused ||
+            !$audioBip.paused ||
 
             !$audioPas1.paused ||
             !$audioPas3.paused ||
@@ -534,6 +540,21 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!$audioNoise.paused) {
                 $audioNoise.pause();
                 $audioNoise.currentTime = 0;
+            }
+        }
+        // bip
+        if (currentSlide.classList.contains('12')) {
+            if ($audioBip.paused && !playedBip) {
+                $audioBip.play();
+                playedBip = true;
+                masterGain.gain.setValueAtTime(0.5, audioCtx.currentTime); 
+                masterGain.gain.linearRampToValueAtTime(2.5, audioCtx.currentTime + 58);
+            }
+        }
+        if (currentSlide.classList.contains('13')) {
+            if (!$audioBip.paused) {
+                $audioBip.pause();
+                $audioBip.currentTime = 0;
             }
         }
         // door
