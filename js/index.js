@@ -920,7 +920,7 @@ document.addEventListener("DOMContentLoaded", function () {
         liElement.textContent = "";
 
         const skipHandler = () => {
-            if(typewriterActive) {
+            if(typewriterActive && !(index >= fullText.length)) {
                 liElement.textContent = fullText;
                 $button.removeEventListener('click', skipHandler);
                 stopTypewriter();
@@ -929,7 +929,7 @@ document.addEventListener("DOMContentLoaded", function () {
             };
         };
         $button.addEventListener('click', skipHandler);
-        
+
         // --- 1) Interval des lettres (100ms)
         twInterval = setInterval(() => {
             liElement.textContent += fullText[index];
