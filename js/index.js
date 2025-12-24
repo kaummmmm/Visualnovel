@@ -378,7 +378,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
             }
-            if (currentLi.classList.contains('8')) {
+            if (currentLi.classList.contains('7')) {
                 if (playedG3) {
                     console.log("STOP → $audioG3 (G3)");
                     $audioG3.pause();
@@ -395,7 +395,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     wetGain.gain.value = 1.6;
                 }
             }
-            if (currentLi.classList.contains('8')) {
+            if (currentLi.classList.contains('7')) {
                 if (playedD4) {
                     console.log("STOP → $audioD4 (D4)");
                     $audioD4.pause();
@@ -411,7 +411,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     wetGain.gain.value = 2;
                 }
             }
-            if (currentLi.classList.contains('8')) {
+            if (currentLi.classList.contains('7')) {
                 if (playedA4) {
                     console.log("STOP → $audioA4 (A4)");
                     $audioA4.pause();
@@ -427,7 +427,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     wetGain.gain.value = 2.3;
                 }
             }
-            if (currentLi.classList.contains('8')) {
+            if (currentLi.classList.contains('7')) {
                 if (playedBb4) {
                     console.log("STOP → $audioBb4 (Bb4)");
                     $audioBb4.pause();
@@ -443,7 +443,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     wetGain.gain.value = 2.6;
                 }
             }
-            if (currentLi.classList.contains('8')) {
+            if (currentLi.classList.contains('7')) {
                 if (playedD5) {
                     console.log("STOP → $audioD5 (D5)");
                     $audioD5.pause();
@@ -459,7 +459,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     wetGain.gain.value = 3;
                 }
             }
-            if (currentLi.classList.contains('8')) {
+            if (currentLi.classList.contains('7')) {
                 if (playedF5) {
                     console.log("STOP → $audioF5 (F5)");
                     $audioF5.pause();
