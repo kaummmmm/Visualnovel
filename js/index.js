@@ -710,6 +710,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const items = currentSlide.querySelectorAll("li");
 
+        if ((cur < max) && typewriterActive) {
+ 
+            const li = items[cur];
+            const text = li.textContent;
+            
+            li.textContent = text
+
+            
+            console.log("skipped typewriter")
+            return;
+        }
+
         if (cur < max) {
 
             items[cur].classList.remove("hidden");  // show current
